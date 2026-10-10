@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      // Suppress Vite HMR / WebSocket connection errors in container preview environment
+      window.addEventListener('unhandledrejection', function (e) {
+        var reason = String(e.reason?.message || e.reason || '');
+        if (
+          reason.includes('WebSocket') ||
+          reason.includes('vite') ||
+          reason.includes('closed without opened') ||
+          reason.includes('@vite/client')
+        ) {
+          e.preventDefault();
+          if (typeof e.stopImmediatePropagation === 'function') {
+            e.stopImmediatePropagation();
+          }
+        }
+      });
+      window.addEventListener('error', function (e) {
+        var msg = String(e.message || '');
+        var file = String(e.filename || '');
+        if (
+          msg.includes('WebSocket') ||
+          msg.includes('vite') ||
+          msg.includes('closed without opened') ||
+          file.includes('@vite/client')
+        ) {
+          e.preventDefault();
+          if (typeof e.stopImmediatePropagation === 'function') {
+            e.stopImmediatePropagation();
+          }
+        }
+      }, true);
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>White Circle</title>
+    <meta name="description" content="Minimalist interactive AI visual presence featuring living eyes and intelligent search-grounded conversation." />
+    <meta property="og:title" content="White Circle" />
+    <meta property="og:description" content="Minimalist interactive AI visual presence featuring living eyes and intelligent search-grounded conversation." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

@@ -1,0 +1,6 @@
+{
+  "name": "White Circle",
+  "description": "Minimalist interactive AI visual presence featuring living eyes and intelligent search-grounded conversation.",
+  "requestFramePermissions": ["CAMERA_MICROPHONE"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
